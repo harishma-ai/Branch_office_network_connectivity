@@ -1,0 +1,41 @@
+{
+  "project": "Two Branch Office Connectivity",
+  "inter_branch_link": "10.10.10.0/30",
+  "branches": [
+    {
+      "name": "Branch-A",
+      "city": "Coimbatore",
+      "subnet": "192.168.10.0/24",
+      "gateway": "192.168.10.1"
+    },
+    {
+      "name": "Branch-B",
+      "city": "Chennai",
+      "subnet": "192.168.20.0/24",
+      "gateway": "192.168.20.1"
+    }
+  ],
+  "routes": [
+    {
+      "route_id": "ROUTE-A-B",
+      "destination": "192.168.20.0/24",
+      "next_hop": "10.10.10.2",
+      "link": "Illustrative inter-branch link",
+      "status": "ACTIVE"
+    },
+    {
+      "route_id": "ROUTE-B-A",
+      "destination": "192.168.10.0/24",
+      "next_hop": "10.10.10.1",
+      "link": "Illustrative inter-branch link",
+      "status": "ACTIVE"
+    },
+    {
+      "route_id": "ROUTE-DEFAULT",
+      "destination": "0.0.0.0/0",
+      "next_hop": "Illustrative Internet gateway",
+      "link": "Default route",
+      "status": "ACTIVE"
+    }
+  ]
+}
